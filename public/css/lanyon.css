@@ -1,4 +1,49 @@
-/*
+/*/* 基础暗黑背景 */
+body { background-color: #111; color: #eee; }
+.container { max-width: 42rem; } /* 稍微加宽一点适配网格 */
+.sidebar, .sidebar-toggle { background-color: #1a1a1a; }
+.masthead, .footer { border-bottom: 1px solid #333; }
+
+/* 音效作品网格 */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 两列 */
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+/* 作品卡片 */
+.video-card {
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #222;
+  transition: transform 0.2s;
+}
+.video-card:hover { transform: translateY(-5px); }
+
+.video-card h3 {
+  font-size: 0.95rem;
+  color: #fff;
+  margin: 15px 12px 5px;
+}
+.video-card p {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0 12px 15px;
+}
+
+/* 视频容器 */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: #000;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+}
  *  ___
  * /\_ \
  * \//\ \      __      ___   __  __    ___     ___
