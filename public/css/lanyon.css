@@ -150,3 +150,59 @@ html, body, .sidebar, .content {
 @media (max-width: 48rem) {
   .tech-grid { grid-template-columns: 1fr; }
 }
+/* 1. 强力清除白底：强制锁定全站背景为黑色 */
+html, body, .sidebar, .content, .container, .masthead {
+  background-color: #111111 !important;
+  color: #eeeeee !important;
+  border: none !important; /* 移除奇怪的边框 */
+}
+
+/* 2. 修复侧边栏：让它和背景融为一体 */
+.sidebar-item, .sidebar-nav-item {
+  border-color: #222 !important;
+  color: #888 !important;
+}
+
+/* 3. 优化技术栈网格：去掉标题后让间距更自然 */
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* 4. 卡片精修：参考你喜欢的 image_19459f.png 风格 */
+.tech-card {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #252525;
+  position: relative;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.tech-card:hover {
+  background: #222;
+  border-color: #00e5ff;
+  transform: translateY(-2px);
+}
+
+.tech-icon {
+  width: 40px !important;
+  height: 40px !important;
+  margin-right: 15px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tech-info { display: flex; flex-direction: column; line-height: 1.4; }
+.tech-name { color: #fff; font-weight: 600; font-size: 0.95rem; }
+.tech-type { color: #666; font-size: 0.75rem; margin-top: 2px; }
+
+/* 手机端适配 */
+@media (max-width: 48rem) {
+  .tech-grid { grid-template-columns: 1fr; }
+}
