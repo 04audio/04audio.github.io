@@ -29,3 +29,64 @@ a:hover {
 .page li {
   margin-bottom: 0.8rem;
 }
+/* 1. 强制统一图标尺寸并处理白底 */
+.tech-icon {
+  width: 40px !important;
+  height: 40px !important;
+  margin-right: 15px;
+  object-fit: contain; /* 保证图标不缩放变形 */
+  background-color: transparent; /* 尝试让透明背景生效 */
+  flex-shrink: 0;
+}
+
+/* 2. 创建带箭头的超链接方框卡片 */
+.tech-card {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a; /* 卡片深色背景 */
+  padding: 18px;
+  border-radius: 12px;
+  text-decoration: none !important; /* 去掉超链接下划线 */
+  position: relative;
+  border: 1px solid #252525;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.tech-card:hover {
+  background-color: #222;
+  border-color: #00e5ff; /* 悬停时边框变色 */
+  transform: translateY(-2px);
+}
+
+/* 3. 右上角的小箭头样式 */
+.tech-arrow {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #666;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+
+.tech-card:hover .tech-arrow {
+  color: #00e5ff;
+}
+
+/* 4. 网格布局：一行两个 */
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* 文字信息样式 */
+.tech-info { display: flex; flex-direction: column; }
+.tech-name { color: #fff; font-weight: bold; font-size: 1rem; }
+.tech-type { color: #888; font-size: 0.75rem; margin-top: 4px; }
+
+/* 手机端适配：变回一行一个 */
+@media (max-width: 48rem) {
+  .tech-grid { grid-template-columns: 1fr; }
+}
