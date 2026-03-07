@@ -90,3 +90,63 @@ a:hover {
 @media (max-width: 48rem) {
   .tech-grid { grid-template-columns: 1fr; }
 }
+/* 1. 强制恢复黑色背景，解决网页变白的问题 */
+html, body, .sidebar, .content {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+}
+
+/* 2. 技术网格布局 */
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* 3. 卡片方框样式 */
+.tech-card {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #252525;
+  position: relative;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.tech-card:hover {
+  background: #222;
+  border-color: #00e5ff;
+  transform: translateY(-2px);
+}
+
+/* 4. 图标强制约束：解决变白底和尺寸不一的问题 */
+.tech-icon {
+  width: 42px !important;
+  height: 42px !important;
+  margin-right: 15px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px; /* 加一点圆角 */
+}
+
+.tech-info { display: flex; flex-direction: column; line-height: 1.5; }
+.tech-name { color: #fff; font-weight: bold; font-size: 0.95rem; }
+.tech-type { color: #777; font-size: 0.75rem; margin-top: 2px; }
+
+.tech-arrow {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  color: #444;
+  font-size: 0.8rem;
+}
+
+.tech-card:hover .tech-arrow { color: #00e5ff; }
+
+/* 手机端适配：变为一列 */
+@media (max-width: 48rem) {
+  .tech-grid { grid-template-columns: 1fr; }
+}
