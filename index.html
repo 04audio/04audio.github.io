@@ -1,122 +1,59 @@
----
-layout: default
-title: Home
----
-
-<h2 style="color: #00e5ff; font-size: 1.2rem; border: none; margin-bottom: 1rem;">一、音效redesign</h2>
-
-<div class="video-grid">
-  <div class="video-card">
-    <div class="video-container">
-      <iframe src="//player.bilibili.com/player.html?bvid=你的BV号&page=1&high_quality=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-    </div>
-    <h3>1.《湮灭之潮》实机演示音效redesign</h3>
-    <p>Tides of Annihilation - Combat Sound Redesign</p>
-  </div>
-
-  <div class="video-card">
-    <div class="video-container">
-      <iframe src="//player.bilibili.com/player.html?bvid=你的BV号&page=1&high_quality=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-    </div>
-    <h3>2.《绝区零》角色技能音效redesign</h3>
-    <p>Zenless Zone Zero - Combat Sound Redesign</p>
-  </div>
-</div>
 <hr style="border-top: 1px solid #333; margin: 3rem 0;">
-<h2 style="color: #00e5ff; font-size: 1.2rem; margin-bottom: 1.5rem;">Software / Tech</h2>
-<p style="color: #888; font-size: 0.9rem; margin-bottom: 20px;">
+
+<h2 style="color: #00e5ff; font-size: 1.25rem; margin-bottom: 0.5rem;">Software / Tech  软件 / 技术</h2>
+<p style="color: #999; font-size: 0.95rem; margin-bottom: 5px; font-weight: 300;">
   The tools and technologies that power my craft, every step of the way.
+</p>
+<p style="color: #666; font-size: 0.85rem; margin-bottom: 30px;">
+  贯穿我创作的每一步的工具和技术。
 </p>
 
 <div class="tech-grid">
-  <div class="tech-card">
-    <img src="/public/Reaper.png" class="tech-icon">
+  <a href="#" class="tech-card">
     <div class="tech-info">
       <span class="tech-name">Reaper</span>
-      <span class="tech-type">DAW</span>
+      <span class="tech-type">DAW 数字音频工作站</span>
     </div>
-  </div>
+    <span class="tech-arrow">↗</span>
+  </a>
 
-  <div class="tech-card">
-    <img src="/public/Wwise.png" class="tech-icon">
+  <a href="#" class="tech-card">
     <div class="tech-info">
       <span class="tech-name">Wwise</span>
-      <span class="tech-type">Middleware</span>
+      <span class="tech-type">Middleware 中间件</span>
     </div>
-  </div>
+    <span class="tech-arrow">↗</span>
+  </a>
 
-  <div class="tech-card">
-    <img src="/public/P4V.png" class="tech-icon">
+  <a href="#" class="tech-card">
     <div class="tech-info">
       <span class="tech-name">Perforce</span>
-      <span class="tech-type">Version Control</span>
+      <span class="tech-type">Version Control 版本控制</span>
     </div>
-  </div>
+    <span class="tech-arrow">↗</span>
+  </a>
 
-  <div class="tech-card">
-    <img src="/public/Soundminer.png" class="tech-icon">
+  <a href="#" class="tech-card">
     <div class="tech-info">
       <span class="tech-name">Soundminer</span>
-      <span class="tech-type">Asset Management</span>
+      <span class="tech-type">Asset Management 资产管理</span>
     </div>
-  </div>
+    <span class="tech-arrow">↗</span>
+  </a>
 
-  <div class="tech-card">
-    <img src="/public/Unreal.png" class="tech-icon">
+  <a href="#" class="tech-card">
     <div class="tech-info">
       <span class="tech-name">Unreal</span>
-      <span class="tech-type">Game Engine (C++)</span>
+      <span class="tech-type">Game Engine (C++) 游戏引擎</span>
     </div>
-  </div>
+    <span class="tech-arrow">↗</span>
+  </a>
 
-  <div class="tech-card">
-    <img src="/public/Unity.png" class="tech-icon">
+  <a href="#" class="tech-card">
     <div class="tech-info">
       <span class="tech-name">Unity</span>
-      <span class="tech-type">Game Engine (C#)</span>
+      <span class="tech-type">Game Engine (C#) 游戏引擎</span>
     </div>
-  </div>
+    <span class="tech-arrow">↗</span>
+  </a>
 </div>
-/* 技术网格：手机一列，电脑两列 */
-.tech-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 20px;
-}
-
-/* 卡片样式：深灰色背景，带悬停效果 */
-.tech-card {
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  border: 1px solid #222;
-  transition: all 0.2s ease;
-}
-
-.tech-card:hover {
-  background: #222;
-  border-color: #00e5ff; /* 悬停时边框变青色 */
-  transform: translateY(-2px);
-}
-
-/* 图标统一尺寸，解决白边突兀问题 */
-.tech-icon {
-  width: 35px;
-  height: 35px;
-  margin-right: 15px;
-  object-fit: contain; /* 保证图标不缩放变形 */
-  flex-shrink: 0;
-  border-radius: 4px;
-}
-
-.tech-info { display: flex; flex-direction: column; }
-.tech-name { color: #fff; font-weight: bold; font-size: 0.95rem; }
-.tech-type { color: #888; font-size: 0.75rem; }
-
-/* 手机端适配 */
-@media (max-width: 48rem) {
-  .tech-grid { grid-template-columns: 1fr; }
-}
