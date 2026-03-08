@@ -8,6 +8,7 @@ title: Home
   /* 强制覆盖主题自带的顶端标题，调成低调的深灰色 */
   .site-title, header a, .site-header a { color: #888888 !important; }
   
+  /* 翻页组件样式 */
   .swiper { width: 100%; padding-bottom: 40px; }
   .swiper-slide { opacity: 0.4; transition: 0.3s; border-radius: 12px; overflow: hidden; background: #000; }
   .swiper-slide-active { opacity: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
@@ -72,7 +73,35 @@ title: Home
   </p>
 </div>
 
-<div style="margin-bottom: 2.5rem;">
+<div style="margin-top: 1.5rem; margin-bottom: 1.2rem;">
+  <h2 style="color: #ffffff; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin: 0;">
+    Wwise集成与功能实现
+  </h2>
+</div>
+
+<div class="swiper mySwiper2">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1vx421C78u&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>Wwise</strong> - 优化频段的侧链压缩</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1mx4y1S7JJ&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>Spatial Audio</strong> - 声障, 声笼, 衍射与透射</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1mu4m1g7ic&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>Spatial Audio</strong> - 房间混响与 Portal</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1dM4y1h7AA&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>UE5 + Wwise</strong> - 识别地板材质切换脚步声</p></div>
+    </div>
+  </div>
+  <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+</div>
+
+<div style="margin-bottom: 2.5rem; margin-top: 1.5rem;">
   <h2 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 15px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">Experience</h2>
   <div class="list-row">
     <span class="list-name">湮灭之潮（蛇夫座科技有限公司）</span>
@@ -134,10 +163,24 @@ title: Home
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1.2, centeredSlides: true, spaceBetween: 20, loop: true,
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+  // 共同的配置参数
+  var swiperOptions = {
+    slidesPerView: 1.2,
+    centeredSlides: true,
+    spaceBetween: 20,
+    loop: true,
     breakpoints: { 768: { slidesPerView: 1.5 } }
-  });
+  };
+
+  // 初始化第一个轮播图 (Sound Design)
+  var swiper1 = new Swiper(".mySwiper", Object.assign({}, swiperOptions, {
+    pagination: { el: ".mySwiper .swiper-pagination", clickable: true },
+    navigation: { nextEl: ".mySwiper .swiper-button-next", prevEl: ".mySwiper .swiper-button-prev" }
+  }));
+
+  // 初始化第二个轮播图 (Wwise & UE5)
+  var swiper2 = new Swiper(".mySwiper2", Object.assign({}, swiperOptions, {
+    pagination: { el: ".mySwiper2 .swiper-pagination", clickable: true },
+    navigation: { nextEl: ".mySwiper2 .swiper-button-next", prevEl: ".mySwiper2 .swiper-button-prev" }
+  }));
 </script>
