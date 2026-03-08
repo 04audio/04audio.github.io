@@ -107,3 +107,24 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+/* 锁定纯黑背景 */
+html, body, .sidebar, .content, .container, .masthead {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 侧边栏：灰白对比，彻底告别蓝色链接 */
+.sidebar-nav-item {
+  color: #666666 !important;
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav-item:hover, .sidebar-nav-item.active {
+  color: #ffffff !important;
+}
+
+/* 软件卡片字体稍微缩小以匹配正文 */
+.tech-name { color: #ffffff; font-weight: 700; font-size: 0.95rem; }
+.tech-type { color: #555555; font-size: 0.75rem; margin-top: 3px; }
