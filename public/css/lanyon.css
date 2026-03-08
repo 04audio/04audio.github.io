@@ -1,214 +1,109 @@
-/* ========== 全局背景 & 字体 ========== */
-html, body, .sidebar, .content, .container, .masthead {
-  background-color: #111 !important;
-  color: #eee !important;
-  border: none !important;
-}
+/* 翁天健作品集 - 极致黑白高对比度主题
+  Consolidated Final Version 2026
+*/
 
-/* 链接 */
-a {
-  color: #00e5ff;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* ========== 技术栈网格 ========== */
-.tech-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 15px;
-}
-
-/* 卡片 */
-.tech-card {
-  display: flex;
-  align-items: center;
-  background: #1a1a1a;
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid #252525;
-  position: relative;
-  text-decoration: none !important;
-  transition: all 0.25s ease;
-}
-
-.tech-card:hover {
-  background: #222;
-  border-color: #00e5ff;
-  transform: translateY(-3px);
-}
-
-/* 图标 */
-.tech-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 15px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-/* 文字 */
-.tech-info {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.4;
-}
-
-.tech-name {
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.tech-type {
-  color: #777;
-  font-size: 0.75rem;
-  margin-top: 2px;
-}
-
-/* 手机端 */
-@media (max-width: 48rem) {
-  .tech-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* 1. 强力锁定纯黑背景与纯白文字 */
-html, body, .sidebar, .content, .container, .masthead {
-  background-color: #111111 !important;
-  color: #ffffff !important;
-  -webkit-font-smoothing: antialiased; /* 让字体在深色背景下更细致清晰 */
-}
-
-/* 2. 优化全局字体堆栈 */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-/* 3. 网格与卡片样式：参考 image_19459f.png */
-.tech-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.tech-card {
-  display: flex;
-  align-items: center;
-  background: #1a1a1a;
-  padding: 18px;
-  border-radius: 12px;
-  border: 1px solid #282828;
-  position: relative;
-  text-decoration: none !important;
-  transition: all 0.2s ease;
-}
-
-.tech-card:hover {
-  background: #252525;
-  border-color: #00e5ff;
-  transform: translateY(-2px);
-}
-
-.tech-icon {
-  width: 42px !important;
-  height: 42px !important;
-  margin-right: 18px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.tech-info { display: flex; flex-direction: column; line-height: 1.5; }
-.tech-name { color: #ffffff; font-weight: 700; font-size: 1rem; }
-.tech-type { color: #999999; font-size: 0.8rem; margin-top: 2px; }
-
-.tech-arrow {
-  position: absolute;
-  top: 15px;
-  right: 18px;
-  color: #555;
-  font-size: 0.85rem;
-}
-
-/* 手机端适配 */
-@media (max-width: 48rem) {
-  .tech-grid { grid-template-columns: 1fr; }
-}
-/* -----------------------------------------------------------
-   强力视觉修复补丁 - 强制纯黑背景与高对比度黑白字体
-   ----------------------------------------------------------- */
-
-/* 1. 强制全站纯黑，移除所有干扰边框 */
+/* 1. 全局锁定：纯黑背景与纯白文字 */
 html, body, .sidebar, .content, .container, .masthead, .masthead-title {
   background-color: #000000 !important;
   color: #ffffff !important;
   border: none !important;
   box-shadow: none !important;
+  -webkit-font-smoothing: antialiased; /* 字体锐化 */
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 2. 移除左侧边栏多余的线条 */
+/* 2. 侧边栏导航：移除蓝色，改为灰白 */
 .sidebar { border-right: none !important; }
 
-/* 3. 字体抗锯齿优化，让白字更锐利清晰 */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+.sidebar-nav-item {
+  color: #666666 !important; /* 默认深灰 */
+  border: none !important;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.2s ease;
 }
 
-/* 4. 技术网格布局优化 */
+.sidebar-nav-item:hover, 
+.sidebar-nav-item:focus, 
+.sidebar-nav-item.active {
+  color: #ffffff !important; /* 悬停/选中变白 */
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+/* 3. 字体优化：黑底白字必须清晰 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* 4. 技术栈网格布局 */
 .tech-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  margin-top: 20px;
 }
 
-/* 5. 卡片样式：纯黑/深灰对比度 */
+/* 5. 软件卡片：黑白对比度精修 */
 .tech-card {
   display: flex;
   align-items: center;
-  background-color: #111111; /* 卡片比背景稍微亮一点，增加层次 */
+  background-color: #080808; /* 极深灰区分背景 */
   padding: 18px;
   border-radius: 12px;
-  border: 1px solid #222222;
+  border: 1px solid #1a1a1a;
   position: relative;
   text-decoration: none !important;
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tech-card:hover {
-  background-color: #1a1a1a;
-  border-color: #00e5ff;
+  background-color: #121212;
+  border-color: #ffffff; /* 蓝色改为白色反馈 */
   transform: translateY(-2px);
 }
 
+/* 图标尺寸锁定 */
 .tech-icon {
   width: 44px !important;
   height: 44px !important;
   margin-right: 18px;
   object-fit: contain;
   flex-shrink: 0;
+  border-radius: 4px;
 }
 
-.tech-info { display: flex; flex-direction: column; line-height: 1.6; }
+/* 卡片文字信息 */
+.tech-info { display: flex; flex-direction: column; }
 .tech-name { color: #ffffff; font-weight: 700; font-size: 1.05rem; }
-.tech-type { color: #999999; font-size: 0.85rem; margin-top: 2px; }
+.tech-type { color: #555555; font-size: 0.8rem; margin-top: 4px; }
 
+/* 右上角小箭头 */
 .tech-arrow {
   position: absolute;
   top: 15px;
   right: 18px;
-  color: #444;
+  color: #222222; /* 初始非常暗 */
+  transition: color 0.2s ease;
 }
 
-.tech-card:hover .tech-arrow { color: #00e5ff; }
+.tech-card:hover .tech-arrow { 
+  color: #ffffff; /* 悬停变亮 */
+}
 
-/* 移动端适配 */
+/* 6. 全局链接颜色修正 */
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 7. 响应式适配 */
 @media (max-width: 48rem) {
-  .tech-grid { grid-template-columns: 1fr; }
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
 }
