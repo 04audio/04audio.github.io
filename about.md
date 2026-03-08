@@ -1,27 +1,60 @@
 ---
-layout: page
+layout: default
 title: 关于
 ---
 
-<div style="margin-top: 1rem; font-size: 0.95rem; line-height: 1.8;">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+  /* 调整翻页组件的样式，保持和首页一样的大片感 */
+  .swiper { width: 100%; padding-bottom: 40px; margin-top: 20px; }
+  .swiper-slide { opacity: 0.4; transition: 0.3s; border-radius: 12px; overflow: hidden; background: #000; }
+  .swiper-slide-active { opacity: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .v-container { position: relative; padding-bottom: 56.25%; height: 0; }
+  .v-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .v-label { background: #1a1a1a; padding: 10px 15px; border-top: 1px solid #333; }
+  .v-label p { color: #888; font-size: 0.75rem; margin: 0; letter-spacing: 0.5px; }
+  .v-label strong { color: #00e5ff; }
+  .swiper-button-next, .swiper-button-prev { color: #00e5ff !important; transform: scale(0.5); }
+  .swiper-pagination-bullet-active { background: #00e5ff !important; }
+</style>
 
-  <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 15px; border: none;">个人简介</h3>
-  <p style="color: #eeeeee; margin-bottom: 2rem;">
-    这里是 <strong style="color: #ffffff;">04audio</strong>，一名专注于游戏与影视音效设计的 Sound Designer。
+<div style="margin-top: 2rem; margin-bottom: 1.5rem;">
+  <h2 style="color: #ffffff; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin: 0;">
+    Wwise集成与功能实现
+  </h2>
+  <p style="color: #888; font-size: 0.85rem; margin-top: 10px;">
+    Technical Audio Design & Implementation
   </p>
-
-  <hr style="border-top: 1px solid #222; margin: 2rem 0;">
-
-  <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 15px; border: none;">联系方式</h3>
-  <ul style="list-style: none; padding-left: 0; color: #eeeeee;">
-    <li style="margin-bottom: 10px;">
-      <span style="color: #888; margin-right: 10px;">Bilibili:</span> 
-      <a href="https://www.bilibili.com/video/BV1vx421C78u/?spm_id_from=333.1387.collection.video_card.click&vd_source=2f493a0bb3b927f667bd026618a9c367" target="_blank" style="color: #00e5ff; text-decoration: none;">点击进入我的 B 站主页</a>
-    </li>
-    <li>
-      <span style="color: #888; margin-right: 10px;">Email:</span> 
-      <a href="mailto:742856463@qq.com" style="color: #eeeeee; text-decoration: none;">742856463@qq.com</a>
-    </li>
-  </ul>
-
 </div>
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1vx421C78u&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>Wwise</strong> - 优化频段的侧链压缩</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1mx4y1S7JJ&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>Spatial Audio</strong> - 声障, 声笼, 衍射与透射</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1mu4m1g7ic&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>Spatial Audio</strong> - 房间混响与 Portal</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1dM4y1h7AA&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>UE5 + Wwise</strong> - 识别地板材质切换脚步声</p></div>
+    </div>
+  </div>
+  <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.2, centeredSlides: true, spaceBetween: 20, loop: true,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    breakpoints: { 768: { slidesPerView: 1.5 } }
+  });
+</script>
