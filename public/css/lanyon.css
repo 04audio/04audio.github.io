@@ -139,3 +139,76 @@ body {
 @media (max-width: 48rem) {
   .tech-grid { grid-template-columns: 1fr; }
 }
+/* -----------------------------------------------------------
+   强力视觉修复补丁 - 强制纯黑背景与高对比度黑白字体
+   ----------------------------------------------------------- */
+
+/* 1. 强制全站纯黑，移除所有干扰边框 */
+html, body, .sidebar, .content, .container, .masthead, .masthead-title {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 2. 移除左侧边栏多余的线条 */
+.sidebar { border-right: none !important; }
+
+/* 3. 字体抗锯齿优化，让白字更锐利清晰 */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* 4. 技术网格布局优化 */
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* 5. 卡片样式：纯黑/深灰对比度 */
+.tech-card {
+  display: flex;
+  align-items: center;
+  background-color: #111111; /* 卡片比背景稍微亮一点，增加层次 */
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #222222;
+  position: relative;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+}
+
+.tech-card:hover {
+  background-color: #1a1a1a;
+  border-color: #00e5ff;
+  transform: translateY(-2px);
+}
+
+.tech-icon {
+  width: 44px !important;
+  height: 44px !important;
+  margin-right: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tech-info { display: flex; flex-direction: column; line-height: 1.6; }
+.tech-name { color: #ffffff; font-weight: 700; font-size: 1.05rem; }
+.tech-type { color: #999999; font-size: 0.85rem; margin-top: 2px; }
+
+.tech-arrow {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  color: #444;
+}
+
+.tech-card:hover .tech-arrow { color: #00e5ff; }
+
+/* 移动端适配 */
+@media (max-width: 48rem) {
+  .tech-grid { grid-template-columns: 1fr; }
+}
