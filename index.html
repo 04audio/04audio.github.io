@@ -5,6 +5,9 @@ title: Home
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
+  /* 顶端 04audio 调成更深的颜色 */
+  .site-header-text { color: #888888; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.5px; }
+  
   .swiper { width: 100%; padding-bottom: 40px; }
   .swiper-slide { opacity: 0.4; transition: 0.3s; border-radius: 12px; overflow: hidden; background: #000; }
   .swiper-slide-active { opacity: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
@@ -16,13 +19,17 @@ title: Home
   .swiper-button-next, .swiper-button-prev { color: #00e5ff !important; transform: scale(0.5); }
   .swiper-pagination-bullet-active { background: #00e5ff !important; }
 
-  /* 2. 列表通用样式：仿 image_755503.png */
+  /* 列表通用样式：虚线对齐 */
   .list-row { display: flex; align-items: flex-end; margin-bottom: 12px; font-size: 0.85rem; }
   .list-name { color: #ffffff; font-weight: 700; white-space: nowrap; }
   .list-dots { flex: 1; border-bottom: 1px dotted #444; margin: 0 10px 4px; }
   .list-details { color: #999; text-align: right; white-space: nowrap; }
   .list-details strong { color: #ffffff; font-weight: 500; margin-right: 10px; }
 </style>
+
+<div style="margin-top: 1rem; text-align: center;">
+  <span class="site-header-text">04audio</span> <span style="color: #666; font-size: 0.85rem; margin-left: 5px;">GameAudio</span>
+</div>
 
 <div style="margin-top: 1.5rem; margin-bottom: 1.2rem;">
   <h2 style="color: #ffffff; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin: 0;">
@@ -58,15 +65,12 @@ title: Home
     <a href="https://www.youtube.com/@tidesofannihilation" target="_blank" style="color: #00e5ff; text-decoration: none; font-weight: 700;">《湮灭之潮》 (Tides of Annihilation)</a> 
     设计并实现沉浸式音效，同时还开发交互式技术，为玩家带来全新的游戏体验。
   </p>
-  
   <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8; margin-bottom: 15px;">
     在加入当前项目前，我曾在 <strong style="color: #ffffff;">淳乐音频工作室</strong> 磨练音效设计技巧，并在那里积累了丰富的实战经验。
   </p>
-
   <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8; margin-bottom: 15px;">
-    工作之余，我在 <a href="https://www.bilibili.com/video/BV1vx421C78u/" target="_blank" style="color: #00e5ff; text-decoration: none; font-weight: 700;">Bilibili</a> 分享声音设计经验。我擅长在创意与技术工作之间寻找平衡，这种跨界探索让我始终保持着敏锐的思维和充沛的精力。
+    工作之余，我在 Bilibili 分享声音设计经验。我擅长在创意与技术工作之间寻找平衡，这种跨界探索让我始终保持着敏锐的思维和充沛的精力。
   </p>
-
   <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8;">
     我也喜欢在户外放松身心，无论是徒步旅行、打一场友谊赛，还是在日落时分踢球！
   </p>
@@ -118,9 +122,17 @@ title: Home
     <img src="/public/P4V.png" class="tech-icon">
     <div class="tech-info"><span class="tech-name">Perforce</span><span class="tech-type">Version Control</span></div>
   </a>
+  <a href="https://store.soundminer.com/" target="_blank" class="tech-card">
+    <img src="/public/Soundminer.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Soundminer</span><span class="tech-type">Asset Management</span></div>
+  </a>
   <a href="https://www.unrealengine.com/en-US" target="_blank" class="tech-card">
     <img src="/public/Unreal.png" class="tech-icon">
     <div class="tech-info"><span class="tech-name">Unreal</span><span class="tech-type">Game Engine</span></div>
+  </a>
+  <a href="https://unity.com/cn" target="_blank" class="tech-card">
+    <img src="/public/Unity.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Unity</span><span class="tech-type">Game Engine</span></div>
   </a>
 </div>
 
