@@ -16,21 +16,12 @@ title: Home
   .swiper-button-next, .swiper-button-prev { color: #00e5ff !important; transform: scale(0.5); }
   .swiper-pagination-bullet-active { background: #00e5ff !important; }
 
-  /* 履历列表样式：仿 image_755503.png */
-  .exp-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .exp-left { display: flex; align-items: center; gap: 15px; }
-  .exp-icon { width: 24px; height: 24px; border-radius: 4px; background: #333; flex-shrink: 0; } /* 占位图标 */
-  .exp-company { color: #ffffff; font-size: 0.85rem; font-weight: 600; }
-  .exp-dot-line { flex-grow: 1; border-bottom: 1px dotted #333; margin: 0 15px 4px; }
-  .exp-right { text-align: right; white-space: nowrap; }
-  .exp-title { color: #ffffff; font-size: 0.8rem; font-weight: 500; margin-right: 15px; }
-  .exp-date { color: #666666; font-size: 0.8rem; }
+  /* 2. 履历列表样式：仿 image_755503.png */
+  .exp-row { display: flex; align-items: flex-end; margin-bottom: 12px; font-size: 0.85rem; }
+  .exp-name { color: #ffffff; font-weight: 700; white-space: nowrap; }
+  .exp-dots { flex: 1; border-bottom: 1px dotted #444; margin: 0 10px 4px; }
+  .exp-details { color: #999; text-align: right; white-space: nowrap; }
+  .exp-details strong { color: #ffffff; font-weight: 500; margin-right: 10px; }
 </style>
 
 <div style="margin-top: 1.5rem; margin-bottom: 1.2rem;">
@@ -46,7 +37,7 @@ title: Home
       <div class="v-label"><p>YouTube: <strong>Tides of Annihilation</strong> - Sound Design</p></div>
     </div>
     <div class="swiper-slide">
-      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1mpjhzdEuP&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1mpjhzdEuP&high_quality=1&danmaku=0" allowfullscreen="true"></iframe></div>
       <div class="v-label"><p>Bilibili: <strong>Wuthering Waves</strong> - City of Glory</p></div>
     </div>
     <div class="swiper-slide">
@@ -54,61 +45,54 @@ title: Home
       <div class="v-label"><p>YouTube: <strong>Sound Design Breakdown</strong></p></div>
     </div>
     <div class="swiper-slide">
-      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1oSTXz5ERS&high_quality=1&danmaku=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe></div>
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1oSTXz5ERS&high_quality=1&danmaku=0" allowfullscreen="true"></iframe></div>
       <div class="v-label"><p>Bilibili: <strong>Sound Design Showcase</strong></p></div>
     </div>
   </div>
   <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
 </div>
 
-<div style="margin-top: 1rem; margin-bottom: 2.5rem;">
+<div style="margin-top: 1.5rem; margin-bottom: 2.5rem;">
   <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8; margin-bottom: 15px;">
     嗨，我是 <strong style="color: #ffffff;">翁天健</strong>，一名游戏音效设计师。目前正致力于 
     <a href="https://www.youtube.com/@tidesofannihilation" target="_blank" style="color: #00e5ff; text-decoration: none; font-weight: 700;">《湮灭之潮》 (Tides of Annihilation)</a> 
-    设计并实现沉浸式音效，同时还开发交互式技术。
+    设计并实现沉浸式音效，同时还开发交互式技术，为玩家带来全新的游戏体验。
   </p>
+  
   <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8; margin-bottom: 15px;">
-    在加入当前项目前，我曾在 <strong>淳乐音频工作室</strong> 磨练音效设计技巧，并在那里积累了丰富的实战经验。
+    在加入当前项目前，我曾在 <strong style="color: #ffffff;">淳乐音频工作室</strong> 磨练音效设计技巧，并在那里积累了丰富的实战经验。
+  </p>
+
+  <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8; margin-bottom: 15px;">
+    工作之余，我在 
+    <a href="https://www.bilibili.com/video/BV1vx421C78u/" target="_blank" style="color: #00e5ff; text-decoration: none; font-weight: 700;">Bilibili</a> 
+    分享声音设计经验。我擅长在创意与技术工作之间寻找平衡，这种跨界探索让我始终保持着敏锐的思维和充沛的精力。
+  </p>
+
+  <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8;">
+    我也喜欢在户外放松身心，无论是徒步旅行、打一场友谊赛，还是在日落时分踢球！
   </p>
 </div>
 
 <div style="margin-bottom: 3.5rem;">
   <h2 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 15px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">Experience</h2>
   
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-icon"></div>
-      <span class="exp-company">湮灭之潮 (蛇夫座科技)</span>
-    </div>
-    <div class="exp-dot-line"></div>
-    <div class="exp-right">
-      <span class="exp-title">Sound Designer</span>
-      <span class="exp-date">2025 - Now</span>
-    </div>
+  <div class="exp-row">
+    <span class="exp-name">湮灭之潮（蛇夫座科技有限公司）</span>
+    <span class="exp-dots"></span>
+    <span class="exp-details"><strong>Sound Designer</strong> 2025 - Now</span>
   </div>
 
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-icon"></div>
-      <span class="exp-company">淳乐音频工作室 (广州淳乐文化)</span>
-    </div>
-    <div class="exp-dot-line"></div>
-    <div class="exp-right">
-      <span class="exp-title">Sound Designer</span>
-      <span class="exp-date">2024 - 2025</span>
-    </div>
+  <div class="exp-row">
+    <span class="exp-name">声音工作室（广州淳乐文化）</span>
+    <span class="exp-dots"></span>
+    <span class="exp-details"><strong>Sound Designer</strong> 2024 - 2025</span>
   </div>
 
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-icon"></div>
-      <span class="exp-company">繁星永奏 (成都白之树科技)</span>
-    </div>
-    <div class="exp-dot-line"></div>
-    <div class="exp-right">
-      <span class="exp-title">Sound Designer</span>
-      <span class="exp-date">2023 - 2024</span>
-    </div>
+  <div class="exp-row">
+    <span class="exp-name">繁星永奏（成都白之树网络科技）</span>
+    <span class="exp-dots"></span>
+    <span class="exp-details"><strong>Sound Designer</strong> 2023 - 2024</span>
   </div>
 </div>
 
@@ -121,12 +105,26 @@ title: Home
   <a href="https://www.reaper.fm/" target="_blank" class="tech-card">
     <img src="/public/Reaper.png" class="tech-icon">
     <div class="tech-info"><span class="tech-name">Reaper</span><span class="tech-type">DAW</span></div>
-    <span class="tech-arrow">↗</span>
   </a>
   <a href="https://www.audiokinetic.com/en/wwise/overview/" target="_blank" class="tech-card">
     <img src="/public/Wwise.png" class="tech-icon">
     <div class="tech-info"><span class="tech-name">Wwise</span><span class="tech-type">Middleware</span></div>
-    <span class="tech-arrow">↗</span>
+  </a>
+  <a href="https://www.perforce.com/" target="_blank" class="tech-card">
+    <img src="/public/P4V.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Perforce</span><span class="tech-type">Version Control</span></div>
+  </a>
+  <a href="https://store.soundminer.com/" target="_blank" class="tech-card">
+    <img src="/public/Soundminer.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Soundminer</span><span class="tech-type">Asset Management</span></div>
+  </a>
+  <a href="https://www.unrealengine.com/en-US" target="_blank" class="tech-card">
+    <img src="/public/Unreal.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Unreal</span><span class="tech-type">Game Engine</span></div>
+  </a>
+  <a href="https://unity.com/cn" target="_blank" class="tech-card">
+    <img src="/public/Unity.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Unity</span><span class="tech-type">Game Engine</span></div>
   </a>
 </div>
 
