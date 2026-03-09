@@ -3,35 +3,135 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url | absolute_url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+  /* 强制覆盖主题自带标题颜色 */
+  .site-title, header a, .site-header a { color: #888888 !important; }
+  
+  .swiper { width: 100%; padding-bottom: 40px; }
+  .swiper-slide { opacity: 0.4; transition: 0.3s; border-radius: 12px; overflow: hidden; background: #000; }
+  .swiper-slide-active { opacity: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .v-container { position: relative; padding-bottom: 56.25%; height: 0; }
+  .v-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .v-label { background: #1a1a1a; padding: 10px 15px; border-top: 1px solid #333; }
+  .v-label p { color: #888; font-size: 0.75rem; margin: 0; letter-spacing: 0.5px; }
+  .v-label strong { color: #00e5ff; }
+  .swiper-button-next, .swiper-button-prev { color: #00e5ff !important; transform: scale(0.5); }
+  .swiper-pagination-bullet-active { background: #00e5ff !important; }
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+  /* 列表通用样式：虚线对齐 */
+  .list-row { display: flex; align-items: flex-end; margin-bottom: 12px; font-size: 0.85rem; }
+  .list-name { color: #ffffff; font-weight: 700; white-space: nowrap; }
+  .list-dots { flex: 1; border-bottom: 1px dotted #444; margin: 0 10px 4px; }
+  .list-details { color: #999; text-align: right; white-space: nowrap; }
+  .list-details strong { color: #ffffff; font-weight: 500; margin-right: 10px; }
+</style>
 
-    {{ post.content }}
+<div style="margin-top: 1.5rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: flex-end;">
+  <h2 style="color: #ffffff; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin: 0;">
+    Game Audio Reels
+  </h2>
+  <a href="/about/" style="color: #00e5ff; font-size: 0.75rem; text-decoration: none; font-weight: 600; letter-spacing: 0.5px; border-bottom: 1px solid rgba(0,229,255,0.3); padding-bottom: 2px;">
+    SEE MORE WWISE ↗
+  </a>
+</div>
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="https://www.youtube.com/embed/AKNTcByAPNs?rel=0&modestbranding=1" allowfullscreen></iframe></div>
+      <div class="v-label"><p>YouTube: <strong>Tides of Annihilation</strong> - Sound Design</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1mpjhzdEuP&high_quality=1&danmaku=0" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>Wuthering Waves</strong> - City of Glory</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="https://www.youtube.com/embed/VGOsH1Gp8SE?rel=0&modestbranding=1" allowfullscreen></iframe></div>
+      <div class="v-label"><p>YouTube: <strong>Sound Design Breakdown</strong></p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="v-container"><iframe src="//player.bilibili.com/player.html?bvid=BV1oSTXz5ERS&high_quality=1&danmaku=0" allowfullscreen="true"></iframe></div>
+      <div class="v-label"><p>Bilibili: <strong>Sound Design Showcase</strong></p></div>
+    </div>
   </div>
-  {% endfor %}
+  <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
 </div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ '/' | absolute_url }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
+<div style="margin-top: 1.5rem; margin-bottom: 2.5rem;">
+  <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8; margin-bottom: 15px;">
+    嗨，我是 <strong style="color: #ffffff;">翁天健</strong>，一名游戏音效设计师。目前正致力于 
+    <a href="https://www.youtube.com/@tidesofannihilation" target="_blank" style="color: #00e5ff; text-decoration: none; font-weight: 700;">《湮灭之潮》 (Tides of Annihilation)</a> 
+    设计并实现沉浸式音效，同时还开发交互式技术，为玩家带来全新的游戏体验。
+  </p>
+  <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8; margin-bottom: 15px;">
+    在加入当前项目前，我曾在 <strong style="color: #ffffff;">淳乐音频工作室</strong> 磨练音效设计技巧，并在那里积累了丰富的实战经验。
+  </p>
+  <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8; margin-bottom: 15px;">
+    工作之余，我在 Bilibili 分享声音设计经验。我擅长在创意与技术工作之间寻找平衡，这种跨界探索让我始终保持着敏锐的思维和充沛的精力。
+  </p>
+  <p style="color: #eeeeee; font-size: 0.85rem; line-height: 1.8;">
+    我也喜欢在户外放松身心，无论是徒步旅行、打一场友谊赛，还是在日落时分踢球！
+  </p>
 </div>
+
+<div style="margin-bottom: 3.5rem;">
+  <h2 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 15px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">Experience</h2>
+  <div class="list-row">
+    <span class="list-name">湮灭之潮（蛇夫座科技有限公司）</span>
+    <span class="list-dots"></span>
+    <span class="list-details"><strong>Sound Designer</strong> 2025 - Now</span>
+  </div>
+  <div class="list-row">
+    <span class="list-name">声音工作室（广州淳乐文化）</span>
+    <span class="list-dots"></span>
+    <span class="list-details"><strong>Sound Designer</strong> 2024 - 2025</span>
+  </div>
+  <div class="list-row">
+    <span class="list-name">繁星永奏（成都白之树网络科技）</span>
+    <span class="list-dots"></span>
+    <span class="list-details"><strong>Sound Designer</strong> 2023 - 2024</span>
+  </div>
+</div>
+
+<div style="margin-bottom: 25px;">
+  <h2 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 8px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">Software/Tech</h2>
+  <p style="color: #666666; font-size: 0.8rem;">贯穿我创作的每一步的工具和技术</p>
+</div>
+
+<div class="tech-grid">
+  <a href="https://www.reaper.fm/" target="_blank" class="tech-card">
+    <img src="/public/Reaper.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Reaper</span><span class="tech-type">DAW</span></div>
+  </a>
+  <a href="https://www.audiokinetic.com/en/wwise/overview/" target="_blank" class="tech-card">
+    <img src="/public/Wwise.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Wwise</span><span class="tech-type">Middleware</span></div>
+  </a>
+  <a href="https://www.perforce.com/" target="_blank" class="tech-card">
+    <img src="/public/P4V.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Perforce</span><span class="tech-type">Version Control</span></div>
+  </a>
+  <a href="https://store.soundminer.com/" target="_blank" class="tech-card">
+    <img src="/public/Soundminer.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Soundminer</span><span class="tech-type">Asset Management</span></div>
+  </a>
+  <a href="https://www.unrealengine.com/en-US" target="_blank" class="tech-card">
+    <img src="/public/Unreal.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Unreal</span><span class="tech-type">Game Engine</span></div>
+  </a>
+  <a href="https://unity.com/cn" target="_blank" class="tech-card">
+    <img src="/public/Unity.png" class="tech-icon">
+    <div class="tech-info"><span class="tech-name">Unity</span><span class="tech-type">Game Engine</span></div>
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.2, centeredSlides: true, spaceBetween: 20, loop: true,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    breakpoints: { 768: { slidesPerView: 1.5 } }
+  });
+</script>
